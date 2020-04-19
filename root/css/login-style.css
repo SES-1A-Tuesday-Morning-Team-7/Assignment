@@ -21,8 +21,16 @@ body {
     text-align: center;
 }
 
+.register-login-panel h1 {
+    font-family: sans-serif
+}
+
+.register-login-panel h2 {
+    font-family: sans-serif
+}
+
 .register-login-panel input {
-    font-family: sans-serif;
+    font-family: Tahoma, Geneva, sans-serif;
     font-size: 16px;
     text-align: center;
     outline: 1;
@@ -37,13 +45,13 @@ body {
 }
 
 .register-login-panel button {
-    font-family: sans-serif;
+    font-family: Tahoma, Geneva, sans-serif;
     font-size: 16px;
     color: #000000;
     outline: 0;
     background: #99EE99;
-    width: 50%;
-    border: 1;
+    width: 75%;
+    border: 0;
     padding: 5;
     cursor: pointer;
 }
@@ -53,7 +61,7 @@ body {
 }
 
 .register-login-panel p {
-    font-family: sans-serif;
+    font-family: Tahoma, Geneva, sans-serif;
     font-size: 14px;
     padding: 10px;
 }
