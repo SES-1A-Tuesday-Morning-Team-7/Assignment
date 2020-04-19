@@ -1,0 +1,68 @@
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/login-back.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.login-window {
+    width: 400px;
+    padding: 10%, 0, 0;
+    margin:auto;
+}
+
+.register-login-panel {
+    position: relative;
+    z-index: 1;
+    background: rgba(66, 135, 213, 0.8);
+    max-width: 400px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+}
+
+.register-login-panel input {
+    font-family: sans-serif;
+    font-size: 16px;
+    text-align: center;
+    outline: 1;
+    background: #abd7eb;
+    width: 75%;
+    border: 1;
+    border-color: #f0f8ff;
+    margin: 0 0 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    box-sizing: border-box; 
+}
+
+.register-login-panel button {
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #000000;
+    outline: 0;
+    background: #99EE99;
+    width: 50%;
+    border: 1;
+    padding: 5;
+    cursor: pointer;
+}
+
+.register-login-panel button:hover, .register-login-panel button:active {
+    background: #60EE60
+}
+
+.register-login-panel p {
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.register-login-panel a {
+    color: #99EE99;
+    text-decoration: none;
+}
+
+.register-form {
+    display:none;
+}
