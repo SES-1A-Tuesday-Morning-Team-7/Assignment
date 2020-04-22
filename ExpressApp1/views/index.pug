@@ -1,0 +1,39 @@
+head
+  meta(charset='utf-8')
+  title E-Healthcare Login
+  link(rel='stylesheet' href='/stylesheets/login-style.css')
+  script(src='/javascripts/login.js')
+.login-window
+  .register-login-panel
+    h1 E-Healthcare Login
+    form.register-form
+      h2 Register
+      input#fname(type='text' placeholder='Given Name')
+      input#lname(type='text' placeholder='Surname')
+      input#email(type='text' placeholder='Email')
+      input#reg-user(type='text' placeholder='Username')
+      input#reg-pass(type='password' placeholder='Password')
+      button(type='button' onclick='patRegistration()') Register Account
+      p.swap-message
+        | Existing Patient? 
+        a(href='#') Login
+    form.pat-login-form
+      h2 Patient Login
+      input#pat-log-user(type='text' placeholder='Username')
+      input#pat-log-pass(type='password' placeholder='Password')
+      button(type='button' onclick='patLogin()') Login
+    form.doc-login-form
+      h2 Doctor Login
+      input#doc-log-user(type='text' placeholder='Username')
+      input#doc-log-pass(type='password' placeholder='Password')
+      button(type='button' onclick='docLogin()') Login
+      p.swap-message
+        | New Patient? 
+        a(href='#') Register
+script(src='https://code.jquery.com/jquery-3.2.1.min.js')
+script.
+  $('.swap-message a').click(function() {
+  $('.register-form').animate({height: "toggle", opacity: "toggle"}, "slow");
+  $('.pat-login-form').animate({height: "toggle", opacity: "toggle"}, "slow");
+  $('.doc-login-form').animate({height: "toggle", opacity: "toggle"}, "slow");
+  });

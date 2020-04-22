@@ -1,0 +1,6 @@
+C:\Users\User\source\repos\ExpressApp1\ExpressApp1\obj\Debug\EHealthcare.njsproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\ExpressApp1\ExpressApp1\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\User\source\repos\ExpressApp1\ExpressApp1\obj\Debug\EHealthcare.njsprojAssemblyReference.cache
+D:\Documents\Uni\SES1A - A2020\Repo\Assignment\ExpressApp1\obj\Debug\EHealthcare.njsprojAssemblyReference.cache
+D:\Documents\Uni\SES1A - A2020\Repo\Assignment\ExpressApp1\obj\Debug\EHealthcare.njsproj.CoreCompileInputs.cache
+D:\Documents\Uni\SES1A - A2020\Repo\Assignment\ExpressApp1\bin\Microsoft.NodejsTools.WebRole.dll
