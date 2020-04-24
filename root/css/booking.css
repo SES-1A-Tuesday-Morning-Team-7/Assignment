@@ -71,3 +71,25 @@ body{
 	font-size: 22px;
 	margin-top: 20px;
 }
+
+.existing-appt {
+    padding: 20px;
+}
+
+.existing-appt h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.existing-appt {
+    display:none;
+}
+
+.log-Btn {
+    background-color: #138496 ;
+	border-color: #138496 ;
+	width: 50%;
+    position: absolute;
+    right: 120px;
+    color: #FFF;
+}

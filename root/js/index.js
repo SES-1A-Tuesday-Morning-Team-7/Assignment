@@ -5,7 +5,12 @@
 
 var fname, lname, email, user, pass;       //variables used in patRegistration() to hold text box values
 
-var patients = [];    //declaration of patients array of objects created on registration window.
+if(window.localStorage.getItem("patients") === null) {                           //only create new appointments array if one does not already exist in cross page local storage
+    var patients = [];
+}
+else {
+    var patients = JSON.parse(window.localStorage.getItem("patients"));     //if one exists, use it instead
+}
           
 var doctors = [         //dummy doctors array for testing purpose. Replace later with registration.
     {
@@ -45,7 +50,7 @@ function docLogin() {
             console.log(doctors[i].username);
             //
             //
-            // Insert open new window and parameter passing here.
+            //IN SPRINT 2: Insert Link to Doctor Login
             //
             //
             return
@@ -63,7 +68,9 @@ function patLogin() {
             console.log(patients[i].user);
             //
             //
-            // Insert open new window and parameter passing here.
+            localStorage.setItem("patient", JSON.stringify(patients[i]));
+            localStorage.setItem("patients", JSON.stringify(patients));
+            window.open('../root/booking.html', '_self');
             //
             //
             return
