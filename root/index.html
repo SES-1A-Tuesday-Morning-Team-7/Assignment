@@ -35,6 +35,13 @@
                     <input type=password id="doc-log-pass" placeholder="Password"/>
                     <button type="button" onclick="docLogin()">Login</button>
                     <p class="swap-message">New Patient? <a href="#">Register</a></p>
+                    <p class="admin-swap">System Admin? <a href="#">Login</a></p>
+                </form>
+                <form class="admin-login">
+                    <h2>Admin Login</h2>
+                    <input type=text id="admin-user" placeholder="Username"/>
+                    <input type=password id="admin-pass" placeholder="Password"/>
+                    <button type="button" onclick="adminLogin()">Reset System</button>
                 </form>
             </div>
         </div>
@@ -47,6 +54,9 @@
                 $('.register-form').animate({height: "toggle", opacity: "toggle"}, "slow");
                 $('.pat-login-form').animate({height: "toggle", opacity: "toggle"}, "slow");
                 $('.doc-login-form').animate({height: "toggle", opacity: "toggle"}, "slow");
+            });
+            $('.admin-swap a').click(function() {
+                $('.admin-login').animate({height: "toggle", opacity: "toggle"}, "slow");
             });
         </script>
         

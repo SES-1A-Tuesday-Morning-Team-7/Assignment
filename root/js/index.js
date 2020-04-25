@@ -41,6 +41,26 @@ function patRegistration() {
     alert("Thankyou for registering " + patients[patients.length - 1].fname + " you may now log in.");
 }
 
+function adminLogin() {
+//    var username = document.getElementById("admin-user").value;
+//    var password = document.getElementById("admin-pass").value;
+//    
+//    if(username=="Admin" && password =="Admin") {
+//        localStorage.setItem("patients", JSON.stringify(patients));             //save before leaving
+//        window.open('../root/adminDash.html', '_self');
+//    }
+    if(confirm("Are you sure you wish to delete all patient and appointment data?")) {
+        localStorage.removeItem("patient");
+        localStorage.removeItem("patients");
+        localStorage.removeItem("appointments");
+        
+        //Add a new statement for each table in the localStorage as the project progresses. This should be used for testing only!!!
+        
+        localStorage.clear();
+        location.reload();
+    }
+}
+
 function docLogin() {
     var username = document.getElementById("doc-log-user").value;
     var password = document.getElementById("doc-log-pass").value;
@@ -50,7 +70,7 @@ function docLogin() {
             console.log(doctors[i].username);
             //
             //
-            //IN SPRINT 2: Insert Link to Doctor Login
+            //IN SPRINT 2: Insert Link to Doctor Dashboard
             //
             //
             return
@@ -68,8 +88,8 @@ function patLogin() {
             console.log(patients[i].user);
             //
             //
-            localStorage.setItem("patient", JSON.stringify(patients[i]));
-            localStorage.setItem("patients", JSON.stringify(patients));
+            localStorage.setItem("patient", JSON.stringify(patients[i]));       //to retrive in this patients windows
+            localStorage.setItem("patients", JSON.stringify(patients));         //save before leaving
             window.open('../root/booking.html', '_self');
             //
             //
