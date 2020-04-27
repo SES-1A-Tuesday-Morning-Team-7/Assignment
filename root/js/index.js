@@ -1,4 +1,4 @@
-//Index login and registration page script. V0.1
+//Index login and registration page script.
 //
 //
 
@@ -37,8 +37,27 @@ function patRegistration() {
     email = document.getElementById("email").value;
     user = document.getElementById("reg-user").value;
     pass = document.getElementById("reg-pass").value;
-    patients.push(new Patient(fname, lname, email, user, pass));
-    alert("Thankyou for registering " + patients[patients.length - 1].fname + " you may now log in.");
+    
+    if(fname == "" || lname == "" || email == "" || user == "" || pass == "") {
+        alert("All fields must be filled before registering.");
+        return;
+    }
+    
+    for(i = 0; i < patients.length; i++) {
+        if(patients[i].user == user || patients[i].email == email) {
+            alert("A patient with this email/username already exists.")
+            return;
+        }
+    }
+    
+    if(email.includes("@")) {
+        patients.push(new Patient(fname, lname, email, user, pass));
+        alert("Thankyou for registering " + patients[patients.length - 1].fname + " you may now log in.");
+    }
+    else {
+        alert("Sorry your email is not valid.");
+    }
+    
 }
 
 function adminLogin() {
