@@ -47,6 +47,7 @@ function book() {
     }
     
     appointments.push(new Appointment(selectedDate, selectedTime, selectedDoctor));
+    alert("Your appointment has been booked.");
 }
 
 //ONLICK FOR LOGOUT BUTTON
