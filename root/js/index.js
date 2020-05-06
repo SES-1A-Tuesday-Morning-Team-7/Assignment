@@ -14,11 +14,15 @@ else {
           
 var doctors = [         //dummy doctors array for testing purpose. Replace later with registration.
     {
+        fname: "Mark",
+        lname: "Twain",
         username: "mark",
         password: "doc101"
     },
     {
-        username: "john",
+        fname: "David",
+        lname: "Pikachu",
+        username: "dave",
         password: "doc202"
     }
 ];
@@ -86,13 +90,10 @@ function docLogin() {
     
     for (i = 0; i < doctors.length; i++) {
         if(username == doctors[i].username && password == doctors[i].password) {
-            console.log(doctors[i].username);
-            alert("Logged in successfully");
-            //
-            //
-            //IN SPRINT 2: Insert Link to Doctor Dashboard
-            //
-            //
+            localStorage.setItem("doctor", JSON.stringify(doctors[i]));         //to retrieve doctor info in the doctor's dashbaord
+            localStorage.setItem("doctors", JSON.stringify(doctors));           //save before leaving
+            localStorage.setItem("patients", JSON.stringify(patients));         //save before leaving
+            window.open('../root/doctor-dash.html', '_self');
             return
         }
     }
@@ -105,14 +106,9 @@ function patLogin() {
     
     for (i = 0; i < patients.length; i++) {
         if(username == patients[i].user && password == patients[i].pass) {
-            console.log(patients[i].user);
-            //
-            //
             localStorage.setItem("patient", JSON.stringify(patients[i]));       //to retrive in this patients windows
             localStorage.setItem("patients", JSON.stringify(patients));         //save before leaving
-            window.open('../root/booking.html', '_self');
-            //
-            //
+            window.open('../root/patient-dash.html', '_self');
             return
         }
     }
