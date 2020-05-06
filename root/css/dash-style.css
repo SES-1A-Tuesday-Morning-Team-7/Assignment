@@ -1,0 +1,59 @@
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/login-back.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.title {
+    font-family: sans-serif;
+    position:relative;
+}
+
+.sub-text {
+    font-family: sans-serif;
+    position:relative;
+}
+
+.dash-window {
+    width: 500px;
+    margin:auto;
+}
+
+
+.dash-panel {
+    position: relative;
+    background: rgba(66, 135, 213, 0.8);
+    max-width: 400px;
+    margin-top: 10%;
+    margin-bottom: 10%; 
+    padding: 5%;
+    text-align: center;
+}
+
+.buttons {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.buttons button {
+    font-family: Tahoma, Geneva, sans-serif;
+    position: relative;
+    font-size: 16px;
+    color: #000000;
+    background: #99EE99;
+    border: 1;
+    outline: 1;
+    cursor: pointer;
+    width: 80%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 10px;
+}
+
+.log-btn {
+    background-color: #138496 ;
+	border-color: #138496 ;
+	width: 20%;
+    position: relative;
+    color: #FFF;
+}
