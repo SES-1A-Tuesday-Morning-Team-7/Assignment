@@ -22,7 +22,7 @@ var patient = JSON.parse(window.localStorage.getItem("patient"));
 function Appointment(inputDate, inputTime, inputDoctor) {
     this.apptDate = inputDate;
     this.time = inputTime;
-    this.doc = inputDoctor;
+    this.doctor = inputDoctor;
     this.pat = patient.fname;
 }
 
