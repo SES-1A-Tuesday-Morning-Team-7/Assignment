@@ -12,5 +12,5 @@ function scriptBtn() {
     window.open('', '_self');                   //ADD LINK WHEN PAGE MADE - Prescription - Sprint 3
 }
 function docBtn() {
-    window.open('', '_self');                   //ADD LINK WHEN PAGE MADE - Doctor Info - Sprint 2
+    window.open('doctor-info.html', '_self');                   //ADD LINK WHEN PAGE MADE - Doctor Info - Sprint 2
 }
