@@ -1,28 +1,28 @@
 //Booking Page Behaviours
 
-var appointments = [         //dummy doctors array for testing purpose. Replace later with registration.
-    {
-        doc: "Mark",
-        time: "11:30am",
-        apptDate: "May 3rd"
-    },
-    {
-        doc: "Alex",
-        time: "12:00pm",
-        apptDate: "May 14th"
-    }
-];
+//var appointments = [         //dummy doctors array for testing purpose. Replace later with registration.
+//    {
+//        doc: "Mark",
+//        time: "11:30am",
+//        apptDate: "May 3rd"
+//    },
+//    {
+//        doc: "Alex",
+//        time: "12:00pm",
+//        apptDate: "May 14th"
+//    }
+//];
 
 
 //DECLARATIONS
 var selectedDate, selectedTime, selectedDoctor;
 
-//if(window.localStorage.getItem("appointments") === null) {                           //only create new appointments array if one does not already exist in cross page local storage
-    //var appointments = [];
-//}
-//else {
-    //var appointments = JSON.parse(window.localStorage.getItem("appointments"));     //if one exists, use it instead
-//}
+if(window.localStorage.getItem("appointments") === null) {                           //only create new appointments array if one does not already exist in cross page local storage
+    var appointments = [];
+}
+else {
+    var appointments = JSON.parse(window.localStorage.getItem("appointments"));     //if one exists, use it instead
+}
 
 
 //INITIALISE
@@ -67,17 +67,19 @@ function book() {
 //APPOINTMENTS DISPLAY
 function loadAppointments() {
 	for(i = 0; i < appointments.length; i++) {
-		//DISPLAY DETAILS
-		var a = document.createElement("a");
+        if(appointments[i].pat == patient.fname) {
+		  //DISPLAY DETAILS
+		  var a = document.createElement("a");
 
-		//a.href = ""; 				ADD LINK TO CHAT WINDOW
+		  //a.href = ""; 				ADD LINK TO CHAT WINDOW
 
-   		a.appendChild(document.createTextNode(appointments[i].time + " " + appointments[i].apptDate + " with " + appointments[i].doc + "."));
+   		   a.appendChild(document.createTextNode(appointments[i].time + " " + appointments[i].apptDate + " with " + appointments[i].doctor + "."));
 
-		//ADD DETAILS TO HTML
-		var element = document.getElementById("appointments");
-   		element.appendChild(a);
-		element.appendChild(document.createElement("br"));
+		  //ADD DETAILS TO HTML
+		  var element = document.getElementById("appointments");
+   	        element.appendChild(a);
+		  element.appendChild(document.createElement("br"));
+        }
 	}
 }
 
