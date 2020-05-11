@@ -7,7 +7,7 @@
         <script src='js/chat-tab.js'></script>
     </head>
     
-    <body>
+    <body onload="pastMessages()">
         <div class="chat-window">
             <div class="message-panel" id="messagePanel">
                 <h2>Welcome to your appointment chat</h2>
@@ -19,7 +19,7 @@
             
             <div class="compose-window">
                 <input type="text" id="messageBox" placeholder="New Message">
-                <button onclick=sendBtn()>Send</button>
+                <button id="send" onclick=sendBtn()>Send</button>
             </div>
         </div>
         <button onclick="backBtn()">Leave Chat</button>
