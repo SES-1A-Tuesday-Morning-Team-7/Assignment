@@ -24,26 +24,38 @@ var chats = JSON.parse(window.localStorage.getItem("chats"));
 //var chatRef = ;                                                           //Pull pointer from URL 
 //var currChat = chats[]                                                    //Use pointer from URL to find this chat   
 
-//Then if chat array for this booking is not empty, fill existing messages to form. METHOD NOT WORKING AS OF 1:48PM 9/5/2020
-if(currChat.length > 0) {
-    for(i = 0; i < currChat.length; i++) {
-        var temp = document.getElementsByTagName("template")[0];
-        var from = temp.content.querySelector("h3");
-        var msg = temp.content.querySelector("p");
-        var x = document.importNode(from, true);
-        var y = document.importNode(msg, true);
-        x.textContent = currChat[i].author;
-        y.textContent = currChat[i].msg;
-        document.getElementById("messagePanel").appendChild(x);
-        document.getElementById("messagePanel").appendChild(y);
-    } 
-}
-
 //Constructor for message object
 function Message(msg) {
     this.author = userData.fname;
     this.msg = msg;
 }
+
+//Initialisation function for onload. Fill past messages.
+function pastMessages() {
+    if(currChat.length > 0) {
+        for(i = 0; i < currChat.length; i++) {
+            var temp = document.getElementsByTagName("template")[0];
+            var from = temp.content.querySelector("h3");
+            var msg = temp.content.querySelector("p");
+            var x = document.importNode(from, true);
+            var y = document.importNode(msg, true);
+            x.textContent = currChat[i].author;
+            y.textContent = currChat[i].msg;
+            document.getElementById("messagePanel").appendChild(x);
+            document.getElementById("messagePanel").appendChild(y);
+            
+            //Listener for sending with enter/return keypress - NOT WORKING
+            document.getElementById("messageBox").addEventListener("keypress", function(event) {
+                if(event.keyCode === 13 && document.getElementById("messageBox").value!="") {
+                    event.preventDefault();
+                    document.getElementById("send").click();
+                }
+            });
+        } 
+    }
+}
+
+
 
 //onclick for send button.
 function sendBtn() {
@@ -68,6 +80,10 @@ function sendBtn() {
     
     //Store message
     currChat.push(new Message(message));
+    
+    //Clear input field
+    document.getElementById("messageBox").value = "";
+    return;
 }
 
 //onclick for back button.
