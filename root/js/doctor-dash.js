@@ -1,24 +1,13 @@
 function logBtn() {
-    window.open('index.html', '_self');
+    window.open('../root/index.html', '_self');
 }
 
-function chatBtn() {
-    if(window.localStorage.getItem("appointments") === null) {
-        alert("You have no scheduled appointments.");
-        return;
-    }
-    var consults = JSON.parse(window.localStorage.getItem("appointments"));
-    var doctor = JSON.parse(window.localStorage.getItem("doctor"));
-    for(i = 0; i < consults.length; i++) {
-        if(consults[i].doctor == doctor.fname) {
-            //
-            //
-            //ADD LINK TO OPEN SPECIFIC APPOINTMENT CHAT WINDOW HERE WHEN CHATS CREATED
-            //
-            //
-        }
-    }
+function consultBtn() {
+    window.open('../root/doctor-appointment.html', '_self');
 }
 function scriptBtn() {
     window.open('', '_self');                   //ADD LINK WHEN PAGE MADE - Prescription - Sprint 3
+}
+function chatBtn() {
+    window.open('chat-tab.html', '_self');
 }

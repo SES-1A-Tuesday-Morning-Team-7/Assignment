@@ -16,12 +16,14 @@ var doctors = [         //dummy doctors array for testing purpose. Replace later
     {
         fname: "Mark",
         lname: "Twain",
+        location: "Sydney",
         username: "mark",
         password: "doc101"
     },
     {
         fname: "David",
         lname: "Pikachu",
+        location: "Melbourne",
         username: "dave",
         password: "doc202"
     }
@@ -76,6 +78,8 @@ function adminLogin() {
         localStorage.removeItem("patient");
         localStorage.removeItem("patients");
         localStorage.removeItem("appointments");
+        localStorage.removeItem("user");
+        localStorage.removeItem("chat");
         
         //Add a new statement for each table in the localStorage as the project progresses. This should be used for testing only!!!
         
@@ -91,6 +95,7 @@ function docLogin() {
     for (i = 0; i < doctors.length; i++) {
         if(username == doctors[i].username && password == doctors[i].password) {
             localStorage.setItem("doctor", JSON.stringify(doctors[i]));         //to retrieve doctor info in the doctor's dashbaord
+            localStorage.setItem("user", JSON.stringify(doctors[i]));
             localStorage.setItem("doctors", JSON.stringify(doctors));           //save before leaving
             localStorage.setItem("patients", JSON.stringify(patients));         //save before leaving
             window.open('../root/doctor-dash.html', '_self');
@@ -107,6 +112,7 @@ function patLogin() {
     for (i = 0; i < patients.length; i++) {
         if(username == patients[i].user && password == patients[i].pass) {
             localStorage.setItem("patient", JSON.stringify(patients[i]));       //to retrive in this patients windows
+            localStorage.setItem("user", JSON.stringify(patients[i]));
             localStorage.setItem("patients", JSON.stringify(patients));         //save before leaving
             window.open('../root/patient-dash.html', '_self');
             return
