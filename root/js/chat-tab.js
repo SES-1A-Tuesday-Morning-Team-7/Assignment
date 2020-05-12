@@ -16,9 +16,15 @@ var currChat = [
 
 
 //First pull required data from local database.
-var userData = JSON.parse(window.localStorage.getItem("patient"));                  //CHANGE TO USER WHEN APPOINTMENT VIEW COMPLETE
+var userData = JSON.parse(window.localStorage.getItem("user"));                  
 var apptData = JSON.parse(window.localStorage.getItem("appt"));                     
-var chats = JSON.parse(window.localStorage.getItem("chats"));
+//var chats = JSON.parse(window.localStorage.getItem("chats"));
+if(window.localStorage.getItem("chat") === null) {
+    var chat = [];
+}
+else {
+    var chat = JSON.parse(window.localStorage.getItem("chat"));
+}
 
 //Locally required data - FILL WHEN APPOINTMENT VIEW COMPLETE
 //var chatRef = ;                                                           //Pull pointer from URL 
@@ -32,19 +38,19 @@ function Message(msg) {
 
 //Initialisation function for onload. Fill past messages.
 function pastMessages() {
-    if(currChat.length > 0) {
-        for(i = 0; i < currChat.length; i++) {
+    if(chat.length > 0) {
+        for(i = 0; i < chat.length; i++) {
             var temp = document.getElementsByTagName("template")[0];
             var from = temp.content.querySelector("h3");
             var msg = temp.content.querySelector("p");
             var x = document.importNode(from, true);
             var y = document.importNode(msg, true);
-            x.textContent = currChat[i].author;
-            y.textContent = currChat[i].msg;
+            x.textContent = chat[i].author;
+            y.textContent = chat[i].msg;
             document.getElementById("messagePanel").appendChild(x);
             document.getElementById("messagePanel").appendChild(y);
             
-            //Listener for sending with enter/return keypress - NOT WORKING
+            //Listener for sending with enter/return keypress
             document.getElementById("messageBox").addEventListener("keypress", function(event) {
                 if(event.keyCode === 13 && document.getElementById("messageBox").value!="") {
                     event.preventDefault();
@@ -79,7 +85,7 @@ function sendBtn() {
     document.getElementById("messagePanel").appendChild(y);
     
     //Store message
-    currChat.push(new Message(message));
+    chat.push(new Message(message));
     
     //Clear input field
     document.getElementById("messageBox").value = "";
@@ -90,6 +96,7 @@ function sendBtn() {
 function backBtn() {
     //chats[chatRef] = currChat;                                //update this session's chat log to array
     //localStorage.setItem("chats", JSON.stringify(chats));     //save chats array before leaving
+    localStorage.setItem("chat", JSON.stringify(chat));
     window.open('patient-dash.html', '_self');
 }
 
@@ -97,5 +104,6 @@ function backBtn() {
 function logBtn() {
     //chats[chatRef] = currChat;                                //update this session's chat log to array
     //localStorage.setItem("chats", JSON.stringify(chats));     //save chats array before leaving
+    localStorage.setItem("chat", JSON.stringify(chat));
     window.open('index.html', '_self');
 }
