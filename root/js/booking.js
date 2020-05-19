@@ -38,6 +38,7 @@ function Appointment(inputDate, inputTime, inputDoctor) {
     this.time = inputTime;
     this.doctor = inputDoctor;
     this.pat = patient.fname;
+    this.chat = [];
 }
 
 
@@ -81,6 +82,18 @@ function loadAppointments() {
 		  element.appendChild(document.createElement("br"));
         }
 	}
+}
+
+//ONCLICK FOR CHAT
+function launchChat() {
+    var apptChosen = document.getElementById("apptId").value;
+    for(i = 0; i < appointments.length; i++) {
+        if(apptChosen == appointments[i].time && patient.fname == appointments[i].pat) {
+            localStorage.setItem("chatID", JSON.stringify(i));
+            localStorage.setItem("appointments", JSON.stringify(appointments));
+            window.open('../root/chat-tab-appt.html', '_self');
+        }
+    }
 }
 
 //ONLICK FOR LOGOUT BUTTON

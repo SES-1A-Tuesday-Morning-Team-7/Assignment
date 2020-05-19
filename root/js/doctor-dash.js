@@ -3,7 +3,7 @@ function logBtn() {
 }
 
 function consultBtn() {
-    window.open('doctor-appointment.html', '_self');
+    window.open('../doctor-appointment.html', '_self');
 }
 function scriptBtn() {
     window.open('doctor-prescription.html', '_self');

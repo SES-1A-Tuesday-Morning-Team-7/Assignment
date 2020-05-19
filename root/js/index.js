@@ -81,6 +81,8 @@ function adminLogin() {
         localStorage.removeItem("user");
         localStorage.removeItem("chat");
         localStorage.removeItem("scripts");
+        localStorage.removeItem("apptChat");
+        
         
         //Add a new statement for each table in the localStorage as the project progresses. This should be used for testing only!!!
         

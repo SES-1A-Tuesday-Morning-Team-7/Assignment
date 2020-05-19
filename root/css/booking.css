@@ -85,6 +85,10 @@ body{
     display:none;
 }
 
+.chat-select input {
+    width: 60%;
+}
+
 .log-Btn {
     background-color: #138496 ;
 	border-color: #138496 ;
