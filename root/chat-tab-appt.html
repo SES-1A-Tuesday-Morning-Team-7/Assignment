@@ -1,0 +1,29 @@
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Chat</title>
+        <link rel="stylesheet" href="../root/css/chat-style.css">
+        <script src='js/chat-tab-appt.js'></script>
+    </head>
+    
+    <body onload="pastMessages()">
+        <div class="chat-window">
+            <div class="message-panel" id="messagePanel">
+                <h2>Welcome to your appointment chat</h2>
+                <template>
+                    <h3 id="messageName"></h3>
+                    <p id="message"></p>
+                </template>
+            </div>
+            
+            <div class="compose-window">
+                <input type="text" id="messageBox" placeholder="New Message">
+                <button id="send" onclick=sendBtn()>Send</button>
+            </div>
+        </div>
+        <button onclick="backBtn()">Leave Chat</button>
+        <button onclick="logBtn()">Logout</button>
+    </body>
+    
+</html>
