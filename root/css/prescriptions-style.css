@@ -1,0 +1,47 @@
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/login-back.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.title {
+    font-family: sans-serif;
+    position:relative;
+}
+
+.sub-text {
+    font-family: sans-serif;
+    position:relative;
+    white-space: pre-line;
+}
+
+.window {
+    width: 500px;
+    margin: auto;
+}
+
+.panel {
+    position: relative;
+    background: rgba(66, 135, 213, 0.8);
+    max-width: 400px;
+    margin-top: 10%;
+    margin-bottom: 10%; 
+    padding: 5%;
+    text-align: center;
+}
+
+.back-btn {
+    background-color: #138496 ;
+    border-color: #138496 ;
+    width: 20%;
+    position: relative;
+    color: #FFF;
+}
+
+.prescription {
+    background: #FAFAFA;
+    margin-top: 10%;
+    margin-bottom: 10%; 
+    padding: 5%;
+    text-align: left;
+}
