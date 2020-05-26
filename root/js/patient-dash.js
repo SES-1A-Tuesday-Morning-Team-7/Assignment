@@ -6,10 +6,10 @@ function bookBtn() {
     window.open('booking.html', '_self');
 }
 function chatBtn() {
-    window.open('chat-tab.html', '_self');                  //CURRENTLY TEST PAGE - ADD REAL LINK WHEN PAGE MADE - Urgent Chat - Sprint 3
+    window.open('chat-tab.html', '_self');                 
 }
 function scriptBtn() {
-    window.open('', '_self');                               //ADD LINK WHEN PAGE MADE - Prescription - Sprint 3
+    window.open('prescriptions.html', '_self');                          
 }
 function docBtn() {
     window.open('doctor-info.html', '_self');                   

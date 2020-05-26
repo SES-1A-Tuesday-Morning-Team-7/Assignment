@@ -3,14 +3,16 @@ var doctors = [         //dummy doctors array for testing purpose. Replace later
         fname: "Mark",
         lname: "Twain",
         username: "mark",
-	location: "Sydney",
+	    location: "Sydney",
+        hours: "9am-5pm",
         password: "doc101"
     },
     {
         fname: "David",
         lname: "Pikachu",
         username: "dave",
-	location: "Melbourne",
+	    location: "Melbourne",
+        hours: "5pm-12am",
         password: "doc202"
     }
 ];
@@ -31,7 +33,8 @@ function viewDoctors() {
 		var p = document.createElement("p");
 		p.className = "sub-text";
   		var pText = document.createTextNode("Username: " + doctors[i].username
-							+ "\nLocation: " + doctors[i].location);
+							+ "\nLocation: " + doctors[i].location
+                            + "\nHours: " + doctors[i].hours);
    		p.appendChild(pText);
 
 		//ADD TO HTML
