@@ -48,6 +48,10 @@ function book() {
     selectedTime = document.getElementById("appt").value;
     selectedDoctor = document.getElementById("docs").value;
 
+    if(selectedDate == "" || selectedTime == "") {
+        alert("Sorry, you must fill all fields to book an appointment.");
+        return;
+    }
     if((selectedTime.charAt(3) != '3' || selectedTime.charAt(3) != '0') && selectedTime.charAt(4) != '0') {
         alert("Sorry, times must be in half hour intervals.")
         return;
@@ -59,10 +63,6 @@ function book() {
                 return;
             }
         }
-    }
-    if(selectedDate == "" || selectedTime == "") {
-        alert("Sorry, you must fill all fields to book an appointment.");
-        return;
     }
     
     appointments.push(new Appointment(selectedDate, selectedTime, selectedDoctor));
