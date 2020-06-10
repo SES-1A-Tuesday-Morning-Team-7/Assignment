@@ -26,6 +26,11 @@ function newPrescription() {
     var duration = document.getElementById("durationField").value;
     //var script = new Prescription(patName, drugName, dosage, duration);
     
+    if(patName == "" || drugName == "" || dosage == "" || duration == "") {
+        alert("Sorry, you must fill all fields to create a prescription");
+        return;
+    }
+    
     scripts.push(new Prescription(patName, drugName, dosage, duration));
     alert("Your prescription has been generated.");
 }

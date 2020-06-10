@@ -55,10 +55,14 @@ function book() {
     if (appointments.length != null) {
         for(i = 0; i < appointments.length; i++) {
             if(appointments[i].doc == selectedDoctor && appointments[i].time == selectedTime && appointments[i].apptDate == selectedDate) {
-                alert("Sorry, this time slot is already filled")
-                return
+                alert("Sorry, this time slot is already filled");
+                return;
             }
         }
+    }
+    if(selectedDate == "" || selectedTime == "") {
+        alert("Sorry, you must fill all fields to book an appointment.");
+        return;
     }
     
     appointments.push(new Appointment(selectedDate, selectedTime, selectedDoctor));
